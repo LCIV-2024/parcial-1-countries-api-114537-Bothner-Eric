@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  parcial:
+    container_name: parcial-container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    ports:
+      - "8080:8080"
+    networks:
+      service-net-app:
+    restart: on-failure
+    
+    
+
+networks:
+  service-net-app:
